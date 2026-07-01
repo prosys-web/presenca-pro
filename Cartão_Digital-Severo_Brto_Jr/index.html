@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Severo Brito Jr. — Presença Pro</title>
+<meta name="description" content="Fundador & Estrategista de Negócios · Presença Pro — Estrutura, Posicionamento & Presença Digital">
+<meta property="og:title" content="Severo Brito Jr. — Presença Pro">
+<meta property="og:description" content="Fundador & Estrategista de Negócios · Estrutura, Posicionamento & Presença Digital">
+<meta property="og:image" content="COLE_AQUI_URL_DO_CLOUDINARY_APOS_UPLOAD">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --preto:#090414;--bg2:#150D27;--bg3:#1a1130;
+  --roxo:#A863FF;--roxo-esc:#5415A3;--roxo-med:#9C5BFF;
+  --gold:#C89B4A;--branco:#fff;
+  --line:rgba(168,99,255,0.18);--line-forte:rgba(168,99,255,0.35);
+  --font-d:'Playfair Display',serif;--font-b:'Inter',sans-serif;
+}
+html,body{
+  min-height:100vh;background:var(--preto);
+  color:var(--branco);font-family:var(--font-b);
+  overflow-x:hidden;
+}
+
+/* ── FUNDO ── */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%,rgba(168,99,255,0.14) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 40% at 0% 100%,rgba(84,21,163,0.10) 0%,transparent 60%);
+}
+
+/* ── WRAPPER ── */
+.card{
+  max-width:420px;margin:0 auto;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;
+  padding:48px 24px 40px;
+  position:relative;z-index:1;
+}
+
+/* ── LOGO ── */
+.logo-wrap{margin-bottom:32px}
+.logo-wrap img{height:72px;width:auto;display:block}
+
+/* ── AVATAR ── */
+.avatar-wrap{
+  position:relative;margin-bottom:24px;
+}
+.avatar{
+  width:110px;height:110px;border-radius:50%;
+  object-fit:cover;display:block;
+  border:2px solid var(--line-forte);
+}
+.avatar-ring{
+  position:absolute;inset:-6px;border-radius:50%;
+  border:1px solid rgba(168,99,255,0.25);
+}
+
+/* ── IDENTIDADE ── */
+.nome{
+  font-family:var(--font-d);font-size:26px;font-weight:600;
+  text-align:center;margin-bottom:6px;letter-spacing:-0.01em;
+}
+.cargo{
+  font-size:12px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--roxo);text-align:center;margin-bottom:6px;
+}
+.empresa{
+  font-size:13px;color:rgba(255,255,255,0.45);
+  text-align:center;margin-bottom:4px;
+  font-style:italic;font-family:var(--font-d);
+}
+.tagline{
+  font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(255,255,255,0.3);text-align:center;margin-bottom:32px;
+}
+
+/* ── DIVISOR ── */
+.divider{
+  width:100%;display:flex;align-items:center;gap:12px;
+  margin-bottom:28px;
+}
+.divider::before,.divider::after{
+  content:'';flex:1;height:1px;background:var(--line);
+}
+.divider span{
+  font-size:9px;letter-spacing:0.3em;text-transform:uppercase;
+  color:rgba(255,255,255,0.25);white-space:nowrap;
+}
+
+/* ── BOTÕES ── */
+.btns{
+  width:100%;display:flex;flex-direction:column;gap:12px;margin-bottom:28px;
+}
+.btn{
+  display:flex;align-items:center;gap:14px;
+  width:100%;padding:16px 20px;border-radius:12px;
+  text-decoration:none;transition:all .2s;
+  border:1px solid var(--line);background:rgba(255,255,255,0.02);
+  cursor:pointer;
+}
+.btn:active{transform:scale(0.98);opacity:0.85}
+.btn-icon{
+  width:38px;height:38px;border-radius:10px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+.btn-info{display:flex;flex-direction:column;gap:2px;flex:1}
+.btn-label{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);font-weight:600}
+.btn-value{font-size:14px;font-weight:600;color:#fff}
+.btn-arrow{font-size:14px;color:rgba(255,255,255,0.25)}
+
+/* Variantes de cor */
+.btn-wa{border-color:rgba(37,211,102,0.3)}
+.btn-wa:hover{border-color:rgba(37,211,102,0.6);background:rgba(37,211,102,0.05)}
+.btn-wa .btn-icon{background:rgba(37,211,102,0.12)}
+
+.btn-site{border-color:var(--line-forte)}
+.btn-site:hover{border-color:var(--roxo);background:rgba(168,99,255,0.06)}
+.btn-site .btn-icon{background:rgba(168,99,255,0.12)}
+
+.btn-portfolio{border-color:var(--line)}
+.btn-portfolio:hover{border-color:var(--roxo-med);background:rgba(168,99,255,0.04)}
+.btn-portfolio .btn-icon{background:rgba(168,99,255,0.08)}
+
+.btn-insta{border-color:rgba(255,100,150,0.25)}
+.btn-insta:hover{border-color:rgba(255,100,150,0.5);background:rgba(255,100,150,0.04)}
+.btn-insta .btn-icon{background:rgba(255,100,150,0.10)}
+
+.btn-email{border-color:var(--line)}
+.btn-email:hover{border-color:rgba(200,155,74,0.4);background:rgba(200,155,74,0.04)}
+.btn-email .btn-icon{background:rgba(200,155,74,0.10)}
+
+.btn-afiliados{border-color:rgba(200,155,74,0.3)}
+.btn-afiliados:hover{border-color:var(--gold);background:rgba(200,155,74,0.05)}
+.btn-afiliados .btn-icon{background:rgba(200,155,74,0.12)}
+
+/* ── SALVAR CONTATO ── */
+.btn-salvar{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:18px;border-radius:12px;
+  background:linear-gradient(135deg,var(--roxo-esc),var(--roxo));
+  color:#fff;font-size:14px;font-weight:700;letter-spacing:0.06em;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:opacity .2s;margin-bottom:28px;
+}
+.btn-salvar:hover{opacity:0.88}
+.btn-salvar:active{transform:scale(0.98)}
+
+/* ── NÚMEROS ── */
+.numeros{
+  width:100%;display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:12px;overflow:hidden;margin-bottom:32px;
+}
+.numero-item{
+  background:var(--bg2);padding:16px 8px;text-align:center;
+}
+.numero-val{
+  font-family:var(--font-d);font-size:22px;font-weight:600;
+  color:var(--roxo);display:block;margin-bottom:4px;
+}
+.numero-label{
+  font-size:10px;color:rgba(255,255,255,0.35);
+  letter-spacing:0.08em;line-height:1.3;
+}
+
+/* ── FOOTER ── */
+.footer-card{
+  text-align:center;
+  font-size:11px;color:rgba(255,255,255,0.2);
+  letter-spacing:0.1em;
+}
+.footer-card a{color:rgba(168,99,255,0.5);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- LOGO -->
+  <div class="logo-wrap">
+    <img src="https://res.cloudinary.com/dslj0yjkm/image/upload/v1782608878/logo_colorida_q8ewmc.png" alt="Presença Pro">
+  </div>
+
+  <!-- AVATAR -->
+  <div class="avatar-wrap">
+    <img class="avatar" src="https://res.cloudinary.com/dslj0yjkm/image/upload/v1777154301/severo_perfil_gnkqtp.jpg" alt="Severo Brito Jr.">
+    <div class="avatar-ring"></div>
+  </div>
+
+  <!-- IDENTIDADE -->
+  <h1 class="nome">Severo Brito Jr.</h1>
+  <div class="cargo">Fundador & Estrategista de Negócios</div>
+  <div class="empresa">Presença Pro</div>
+  <div class="tagline">Estrutura · Posicionamento · Presença Digital</div>
+
+  <!-- DIVISOR -->
+  <div class="divider"><span>Fale comigo</span></div>
+
+  <!-- BOTÕES -->
+  <div class="btns">
+
+    <a class="btn btn-wa" href="https://wa.me/5585994249656?text=Ol%C3%A1%2C%20Severo!%20Vi%20seu%20cart%C3%A3o%20e%20quero%20saber%20mais%20sobre%20a%20Presen%C3%A7a%20Pro." target="_blank">
+      <div class="btn-icon">💬</div>
+      <div class="btn-info">
+        <span class="btn-label">WhatsApp</span>
+        <span class="btn-value">(85) 99424-9656</span>
+      </div>
+      <span class="btn-arrow">→</span>
+    </a>
+
+    <a class="btn btn-site" href="https://prosys-web.github.io/presenca-pro/" target="_blank">
+      <div class="btn-icon">🌐</div>
+      <div class="btn-info">
+        <span class="btn-label">Site Institucional</span>
+        <span class="btn-value">presenca-pro</span>
+      </div>
+      <span class="btn-arrow">→</span>
+    </a>
+
+    <a class="btn btn-portfolio" href="https://prosys-web.github.io/presenca-pro-portfolio/" target="_blank">
+      <div class="btn-icon">🖥️</div>
+      <div class="btn-info">
+        <span class="btn-label">Portfólio</span>
+        <span class="btn-value">Ver projetos entregues</span>
+      </div>
+      <span class="btn-arrow">→</span>
+    </a>
+
+    <a class="btn btn-insta" href="https://instagram.com/presencapro.agencia" target="_blank">
+      <div class="btn-icon">📸</div>
+      <div class="btn-info">
+        <span class="btn-label">Instagram</span>
+        <span class="btn-value">@presencapro.agencia</span>
+      </div>
+      <span class="btn-arrow">→</span>
+    </a>
+
+    <a class="btn btn-email" href="mailto:presenca.proagencia@gmail.com">
+      <div class="btn-icon">✉️</div>
+      <div class="btn-info">
+        <span class="btn-label">E-mail</span>
+        <span class="btn-value">presenca.proagencia@gmail.com</span>
+      </div>
+      <span class="btn-arrow">→</span>
+    </a>
+
+    <a class="btn btn-afiliados" href="https://prosys-web.github.io/presenca-pro-afiliados/" target="_blank">
+      <div class="btn-icon">🤝</div>
+      <div class="btn-info">
+        <span class="btn-label">Programa de Parceiros</span>
+        <span class="btn-value">Ganhe indicando a Presença Pro</span>
+      </div>
+      <span class="btn-arrow">→</span>
+    </a>
+
+  </div>
+
+  <!-- SALVAR CONTATO -->
+  <a class="btn-salvar" href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:Severo%20Brito%20Jr.%0AORG:Presen%C3%A7a%20Pro%0ATITLE:Fundador%20%26%20Estrategista%20de%20Neg%C3%B3cios%0ATEL;TYPE=CELL:+5585994249656%0AEMAIL:presenca.proagencia%40gmail.com%0AURL:https://prosys-web.github.io/presenca-pro/%0ANOTE:Estrutura%2C%20Posicionamento%20%26%20Presen%C3%A7a%20Digital%0AEND:VCARD" download="Severo-Brito-Jr.vcf">
+    ＋ Salvar contato
+  </a>
+
+  <!-- NÚMEROS DE CREDIBILIDADE -->
+  <div class="numeros">
+    <div class="numero-item">
+      <span class="numero-val">30+</span>
+      <span class="numero-label">anos de experiência</span>
+    </div>
+    <div class="numero-item">
+      <span class="numero-val">48h</span>
+      <span class="numero-label">entrega de sites</span>
+    </div>
+    <div class="numero-item">
+      <span class="numero-val">R$297</span>
+      <span class="numero-label">a partir de</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-card">
+    <p>Fortaleza, CE · Atendimento 100% remoto</p>
+    <p style="margin-top:6px">
+      <a href="https://prosys-web.github.io/presenca-pro/">presença-pro</a>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
