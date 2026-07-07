@@ -22,7 +22,7 @@
 <meta name="twitter:title" content="Presença Pro — Estruturação de Negócios & Agência Digital">
 <meta name="twitter:description" content="Sites profissionais, consultoria de estruturação e presença digital para pequenos negócios. Do zero ao digital em 48h.">
 <meta name="twitter:image" content="https://res.cloudinary.com/dslj0yjkm/image/upload/v1777067404/preview_cxbivk.png">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700;1,700&family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -1015,6 +1015,30 @@ footer p{font-size:12px;letter-spacing:0.12em;color:rgba(255,255,255,0.3)}
 .reveal-delay-2{transition-delay:.2s}
 .reveal-delay-3{transition-delay:.3s}
 
+
+/* ── HERO BANNER ── */
+.hero-banner{max-width:1100px;margin:40px auto 0;padding:0 32px;position:relative;overflow:hidden}
+.hero-banner img{width:100%;height:360px;object-fit:cover;object-position:center 30%;display:block;filter:brightness(0.5)}
+.hero-banner-overlay{
+  position:absolute;top:0;left:32px;right:32px;bottom:0;
+  background:
+    linear-gradient(to right,rgba(9,4,20,0.75) 0%,transparent 35%,transparent 65%,rgba(9,4,20,0.75) 100%),
+    linear-gradient(to bottom,transparent 40%,rgba(9,4,20,0.9) 100%);
+}
+.hero-banner-badge{position:absolute;bottom:22px;left:56px;display:flex;gap:8px;flex-wrap:wrap}
+.hbb{
+  background:rgba(9,4,20,0.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(168,99,255,0.4);padding:8px 16px;
+  font-family:var(--font-b);font-size:11px;font-weight:700;letter-spacing:0.15em;
+  text-transform:uppercase;color:var(--roxo-claro);
+}
+@media(max-width:700px){
+  .hero-banner img{height:200px}
+  .hero-banner-overlay{left:16px;right:16px}
+  .hero-banner-badge{left:26px;bottom:14px;gap:6px}
+  .hbb{font-size:9.5px;padding:6px 11px}
+}
+
 </style>
 </head>
 <body>
@@ -1058,7 +1082,7 @@ footer p{font-size:12px;letter-spacing:0.12em;color:rgba(255,255,255,0.3)}
   <!-- LADO ESQUERDO — texto -->
   <div class="hero-split-left reveal">
     <div class="hero-eyebrow" style="align-self:flex-start">✦ Presença Pro</div>
-    <h1 style="font-size:clamp(34px,5vw,58px);margin-bottom:20px">Estruturamos negócios<br><em>do zero ao digital.</em></h1>
+    <h1 style="font-size:clamp(34px,5vw,58px);margin-bottom:20px;font-style:italic;font-family:'Playfair Display',serif;font-weight:600">Estruturamos negócios<br><em style="font-style:italic;color:var(--roxo)">do zero ao digital.</em></h1>
     <p class="lead" style="margin-bottom:28px">Ajudamos pequenos empreendedores a criar, organizar e profissionalizar seus negócios — através de estratégia, posicionamento e presença digital.</p>
 
     <!-- Seletor de momento -->
@@ -1147,6 +1171,22 @@ footer p{font-size:12px;letter-spacing:0.12em;color:rgba(255,255,255,0.3)}
 
 </section>
 
+
+
+  <!-- ═══════ HERO BANNER ═══════ -->
+  <div class="hero-banner reveal reveal-delay-1">
+    <img
+      src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80&auto=format&fit=crop"
+      alt="Reunião de planejamento estratégico — Presença Pro"
+      loading="lazy"
+    >
+    <div class="hero-banner-overlay"></div>
+    <div class="hero-banner-badge">
+      <span class="hbb">Estruturação</span>
+      <span class="hbb">Posicionamento</span>
+      <span class="hbb">Presença Digital</span>
+    </div>
+  </div>
 
 <!-- ═══════ IDENTIFICAÇÃO DO MOMENTO ═══════ -->
 <section id="identificacao">
@@ -1686,7 +1726,7 @@ footer p{font-size:12px;letter-spacing:0.12em;color:rgba(255,255,255,0.3)}
   <div class="idealizador-wrap">
     <div class="idealizador-card">
       <div class="avatar-circle">
-        <img src="https://res.cloudinary.com/dslj0yjkm/image/upload/v1777154301/severo_perfil_gnkqtp.jpg" alt="Severo Brito Jr.">
+        <img src="https://res.cloudinary.com/dslj0yjkm/image/upload/v1783383675/Foto_principal_Severo_lvfejo.png" alt="Severo Brito Jr.">
       </div>
       <h4>Severo Brito Jr.</h4>
       <div class="cargo">Idealizador — Presença Pro</div>
@@ -1801,7 +1841,7 @@ footer p{font-size:12px;letter-spacing:0.12em;color:rgba(255,255,255,0.3)}
     </div>
   </div>
 
-  <!-- 4 passos — Rede de Parceiros -->
+  <!-- 4 passos Rede de Parceiros -->
   <div class="afil-passos-grid" style="max-width:900px;margin:0 auto;padding:40px 32px 0">
     <div style="padding:28px 20px;border:1px solid var(--line);margin:-1px 0 0 -1px">
       <div style="font-family:var(--font-d);font-size:36px;font-weight:600;color:rgba(168,99,255,0.2);line-height:1;margin-bottom:12px">01</div>
