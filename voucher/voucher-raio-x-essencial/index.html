@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voucher de Cortesia — Presença Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg-main:   #090414;
+    --bg-card:   #150D27;
+    --bg-card2:  #1A1130;
+    --roxo-esc:  #5415A3;
+    --roxo-med:  #9C5BFF;
+    --roxo:      #A863FF;
+    --gold:      #C89B4A;
+    --branco:    #FFFFFF;
+    --line:      rgba(168,99,255,.18);
+    --line-f:    rgba(168,99,255,.35);
+    --green:     #27AE60;
+    --font-d:    'Playfair Display', serif;
+    --font-b:    'Inter', sans-serif;
+  }
+
+  html {
+    font-family: var(--font-b);
+    background: var(--bg-main);
+    color: var(--branco);
+    font-weight: 300;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(84,21,163,.22) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 90% 80%, rgba(168,99,255,.1) 0%, transparent 65%),
+      #090414;
+  }
+
+  /* ── CARD ── */
+  .voucher {
+    max-width: 440px;
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--line-f);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(168,99,255,.08);
+    position: relative;
+    animation: fadeUp .6s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* top accent line */
+  .voucher::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--roxo-esc), var(--roxo), var(--gold));
+  }
+
+  /* ── HEADER ── */
+  .v-header {
+    padding: 36px 32px 28px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(84,21,163,.18) 0%, transparent 100%);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .logo-symbol {
+    width: 46px; height: 46px;
+    object-fit: contain;
+  }
+  .logo-text strong {
+    display: block;
+    font-family: var(--font-b);
+    font-size: 16px; font-weight: 800;
+    letter-spacing: .07em; text-transform: uppercase;
+    color: var(--branco);
+  }
+  .logo-text span {
+    display: block;
+    font-size: 9px; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--roxo); margin-top: 2px;
+  }
+
+  .v-gift-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(168,99,255,.12);
+    border: 1px solid rgba(168,99,255,.25);
+    border-radius: 99px;
+    padding: 5px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--roxo);
+    margin-bottom: 16px;
+  }
+
+  .v-header h1 {
+    font-family: var(--font-d);
+    font-size: 22px; font-weight: 700;
+    line-height: 1.25;
+    color: var(--branco);
+    margin-bottom: 10px;
+  }
+  .v-header h1 em { color: var(--roxo); font-style: italic; }
+
+  .v-header .invite {
+    font-size: 13px;
+    color: rgba(255,255,255,.55);
+    line-height: 1.65;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* ── BODY ── */
+  .v-body { padding: 28px 32px; }
+
+  /* INCLUDED */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--roxo);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .includes {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 28px;
+  }
+  .inc-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 11px 16px;
+  }
+  .inc-icon {
+    width: 30px; height: 30px;
+    border-radius: 8px;
+    background: rgba(39,174,96,.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; flex-shrink: 0;
+  }
+  .inc-text { font-size: 13px; color: rgba(255,255,255,.75); font-weight: 500; }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px dashed rgba(168,99,255,.22);
+    margin: 0 0 24px;
+  }
+
+  /* SEAL */
+  .seal-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, rgba(84,21,163,.2) 0%, rgba(200,155,74,.12) 100%);
+    border: 1px solid rgba(200,155,74,.28);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 24px;
+  }
+  .seal-circle {
+    width: 84px; height: 84px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    position: relative;
+    background: rgba(200,155,74,.08);
+  }
+  .seal-circle .pct { font-size: 20px; font-weight: 800; color: var(--gold); line-height: 1; }
+  .seal-circle .word { font-size: 8px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-top: 2px; }
+  .seal-info .price-free {
+    font-family: var(--font-d);
+    font-size: 26px; font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .seal-info .price-ref {
+    font-size: 11.5px;
+    color: rgba(255,255,255,.35);
+    margin-top: 4px;
+    text-decoration: line-through;
+  }
+  .seal-info .promo-label {
+    font-size: 11px;
+    color: rgba(255,255,255,.4);
+    margin-top: 2px;
+  }
+
+  /* VOUCHER NUMBER */
+  .voucher-num {
+    background: rgba(0,0,0,.3);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .voucher-num .label { font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); }
+  .voucher-num .number {
+    font-family: 'Courier New', monospace;
+    font-size: 14px; font-weight: 700;
+    color: var(--roxo);
+    letter-spacing: .08em;
+  }
+
+  /* VALIDADE */
+  .validity {
+    font-size: 11.5px;
+    color: rgba(255,255,255,.35);
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .validity strong { color: var(--gold); }
+
+  /* HOW TO USE */
+  .how-box {
+    background: rgba(255,255,255,.03);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+  .how-box .section-label { margin-bottom: 12px; }
+  .how-steps { display: flex; flex-direction: column; gap: 8px; }
+  .how-step {
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .step-num {
+    width: 22px; height: 22px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--roxo-esc), var(--roxo));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: var(--branco);
+  }
+  .step-text { font-size: 12.5px; color: rgba(255,255,255,.6); line-height: 1.5; padding-top: 2px; }
+
+  /* CTA BUTTON */
+  .btn-primary {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--roxo-esc), var(--roxo));
+    color: var(--branco);
+    font-family: var(--font-b);
+    font-size: 14px; font-weight: 700;
+    letter-spacing: .04em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: opacity .2s, transform .15s;
+    margin-bottom: 10px;
+  }
+  .btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+
+  .time-hint {
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,.38);
+    margin-bottom: 20px;
+  }
+
+  .disclaimer {
+    font-size: 11px;
+    color: rgba(255,255,255,.28);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  .v-footer {
+    background: rgba(0,0,0,.3);
+    border-top: 1px solid var(--line);
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .ft-brand { display: flex; align-items: center; gap: 8px; }
+  .ft-sym {
+    width: 26px; height: 26px;
+    object-fit: contain;
+  }
+  .ft-name { font-size: 11.5px; font-weight: 700; color: var(--branco); }
+  .ft-links { display: flex; gap: 14px; }
+  .ft-links a { font-size: 11px; color: rgba(255,255,255,.38); text-decoration: none; }
+  .ft-links a:hover { color: var(--roxo); }
+  .ft-copy { font-size: 10px; color: rgba(255,255,255,.2); width: 100%; text-align: center; }
+
+  /* ── PRINT ── */
+  @media print {
+    body { padding: 0; background: #090414; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .voucher { box-shadow: none; border-radius: 0; max-width: 100%; }
+    .btn-primary { display: none; }
+    .time-hint { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="voucher">
+
+  <!-- HEADER -->
+  <header class="v-header">
+    <div class="logo-row">
+      <img class="logo-symbol" src="https://res.cloudinary.com/dslj0yjkm/image/upload/v1782608878/logo_colorida_q8ewmc.png" alt="Presença Pro">
+      <div class="logo-text">
+        <strong>Presença Pro</strong>
+        <span>Estrutura • Posicionamento • Presença Digital</span>
+      </div>
+    </div>
+
+    <div class="v-gift-badge">🎁 Voucher de Cortesia</div>
+
+    <h1>Você recebeu um<br>convite <em>exclusivo.</em></h1>
+    <p class="invite">
+      Este voucher dá direito ao seu <strong style="color:rgba(255,255,255,.8)">Raio-X Essencial de Presença Digital</strong> — uma análise gratuita desenvolvida pela Presença Pro para identificar oportunidades de fortalecimento da presença digital da sua empresa.
+    </p>
+  </header>
+
+  <!-- BODY -->
+  <div class="v-body">
+
+    <!-- O QUE ESTÁ INCLUÍDO -->
+    <div class="section-label">O que está incluído</div>
+    <div class="includes">
+      <div class="inc-item">
+        <div class="inc-icon">📸</div>
+        <div class="inc-text">Avaliação inicial do Instagram</div>
+      </div>
+      <div class="inc-item">
+        <div class="inc-icon">📍</div>
+        <div class="inc-text">Perfil da Empresa no Google</div>
+      </div>
+      <div class="inc-item">
+        <div class="inc-icon">📞</div>
+        <div class="inc-text">Facilidade de contato</div>
+      </div>
+      <div class="inc-item">
+        <div class="inc-icon">🌐</div>
+        <div class="inc-text">Presença digital geral</div>
+      </div>
+      <div class="inc-item">
+        <div class="inc-icon">🎯</div>
+        <div class="inc-text">Principais oportunidades de melhoria</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- SELO + PREÇO -->
+    <div class="seal-row">
+      <div class="seal-circle">
+        <div class="pct">100%</div>
+        <div class="word">gratuito</div>
+      </div>
+      <div class="seal-info">
+        <div class="price-free">R$ 0,00</div>
+        <div class="price-ref">Valor de referência: R$ 47</div>
+        <div class="promo-label">Valor Promocional</div>
+      </div>
+    </div>
+
+    <!-- NÚMERO DO VOUCHER -->
+    <div class="voucher-num">
+      <span class="label">Voucher Nº</span>
+      <!-- Para gerar automaticamente via JS, veja o script abaixo -->
+      <span class="number" id="voucherNum">PP-2026-000001</span>
+    </div>
+
+    <!-- VALIDADE -->
+    <p class="validity">⏳ <strong>Válido por 15 dias</strong> após o recebimento</p>
+
+    <!-- COMO UTILIZAR -->
+    <div class="how-box">
+      <div class="section-label">Como utilizar</div>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="step-num">1</div>
+          <div class="step-text">Clique no botão abaixo.</div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">2</div>
+          <div class="step-text">Preencha um formulário rápido com os dados da sua empresa.</div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">3</div>
+          <div class="step-text">Nossa equipe entrará em contato para realizar seu Raio-X Essencial de Presença Digital.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTÃO CTA -->
+    <!--
+      CONFIGURAÇÃO DO LINK DO FORMULÁRIO:
+      Substitua o href abaixo pelo link real do Google Forms ou formulário próprio.
+      Exemplo: href="https://forms.google.com/seu-formulario-aqui"
+    -->
+    <a
+      class="btn-primary"
+      href="https://forms.gle/MoSL6bhpYkHVAUij7"
+      id="cta-btn"
+      target="_blank"
+      rel="noopener"
+    >
+      Ativar meu Voucher
+    </a>
+
+    <p class="time-hint">⏱️ O preenchimento leva menos de 1 minuto.</p>
+
+    <!-- AVISO -->
+    <p class="disclaimer">
+      O Raio-X Essencial é totalmente gratuito e não gera qualquer obrigação de contratação dos serviços da Presença Pro.
+    </p>
+
+  </div><!-- /v-body -->
+
+  <!-- FOOTER -->
+  <footer class="v-footer">
+    <div class="ft-brand">
+      <img class="ft-sym" src="https://res.cloudinary.com/dslj0yjkm/image/upload/v1782608878/logo_colorida_q8ewmc.png" alt="Presença Pro">
+      <span class="ft-name">Presença Pro</span>
+    </div>
+    <div class="ft-links">
+      <a href="https://presencapro.com.br" target="_blank">presencapro.com.br</a>
+      <a href="https://wa.me/5585994249656" target="_blank">WhatsApp</a>
+      <a href="https://instagram.com/presencapro.agencia" target="_blank">Instagram</a>
+    </div>
+    <div class="ft-copy">© 2026 Presença Pro — Todos os direitos reservados.</div>
+  </footer>
+
+</div><!-- /voucher -->
+
+<script>
+  /*
+   * ─────────────────────────────────────────────
+   * GERAÇÃO AUTOMÁTICA DO NÚMERO DO VOUCHER
+   *
+   * Para usar números sequenciais via backend,
+   * substitua a lógica abaixo por uma chamada à API.
+   *
+   * Por enquanto, gera um número único baseado
+   * em timestamp para cada acesso.
+   * ─────────────────────────────────────────────
+   */
+  (function() {
+    const now = new Date();
+    const year = now.getFullYear();
+    // Sequência baseada em timestamp: últimos 6 dígitos do Unix time
+    const seq = String(Date.now()).slice(-6);
+    const voucherCode = `PP-${year}-${seq}`;
+    document.getElementById('voucherNum').textContent = voucherCode;
+  })();
+
+  /*
+   * ─────────────────────────────────────────────
+   * CONFIGURAÇÃO DO LINK DO FORMULÁRIO
+   *
+   * Para alterar o link do botão sem editar HTML,
+   * basta mudar o valor abaixo:
+   * ─────────────────────────────────────────────
+   */
+  const FORM_LINK = 'https://forms.gle/MoSL6bhpYkHVAUij7';
+  document.getElementById('cta-btn').href = FORM_LINK;
+</script>
+
+</body>
+</html>
