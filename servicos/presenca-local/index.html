@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presença Local | Presença Pro</title>
+  <meta name="description" content="Otimize o Perfil da Empresa no Google e fortaleça sua presença local com a Presença Pro.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Presença Local | Presença Pro">
+  <meta property="og:description" content="Otimize o Perfil da Empresa no Google e fortaleça sua presença local com a Presença Pro.">
+  <meta property="og:image" content="https://res.cloudinary.com/dslj0yjkm/image/upload/v1777067404/preview_cxbivk.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Presença Pro">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── RESET & VARIÁVEIS OFICIAIS (MANUAL V1.1) ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #090414;
+      --bg2: #150D27;
+      --bg3: #1A1130;
+      --roxo: #5415A3;
+      --lilas: #A863FF;
+      --medio: #9C5BFF;
+      --gold: #C89B4A;
+      --w: #FFFFFF;
+      --w7: rgba(255, 255, 255, 0.70);
+      --w5: rgba(255, 255, 255, 0.50);
+      --w3: rgba(255, 255, 255, 0.30);
+      --line: rgba(168, 99, 255, 0.18);
+      --line2: rgba(168, 99, 255, 0.35);
+      --lineg: rgba(200, 155, 74, 0.35);
+      
+      --font-d: 'Playfair Display', serif;
+      --font-b: 'Inter', sans-serif;
+      --font-logo: 'Montserrat', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--w);
+      font-family: var(--font-b);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── ANIMAÇÃO REVEAL ON SCROLL (NATIVA DO SITE PRINCIPAL) ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── BANNER SUPERIOR DE ANÚNCIO ── */
+    .top-banner {
+      background: linear-gradient(90deg, var(--roxo), var(--medio));
+      color: var(--w);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 210;
+      border-bottom: 1px solid var(--line2);
+    }
+
+    /* ── HEADER (NAV MASTER) ── */
+    .nav-master {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(9, 4, 20, 0.90);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+      transition: all 0.3s;
+    }
+    .nav-master-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 80px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-logo img {
+      height: 40px;
+      border-radius: 8px;
+    }
+    .nav-logo-text strong {
+      display: block;
+      font-family: var(--font-logo);
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--w);
+    }
+    .nav-logo-text span {
+      display: block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--lilas);
+      text-transform: uppercase;
+      margin-top: -1px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav-link {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--w5);
+      padding: 10px 18px;
+      border-radius: 100px;
+      transition: all 0.25s;
+      border: 1px solid transparent;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--w);
+      background: rgba(168, 99, 255, 0.08);
+      border-color: var(--line);
+    }
+    .nav-cta {
+      background: var(--lilas);
+      color: var(--w);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 12px 24px;
+      border-radius: 100px;
+      transition: all 0.25s;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 16px rgba(168, 99, 255, 0.25);
+    }
+    .nav-cta:hover {
+      background: var(--medio);
+      transform: translateY(-1px);
+    }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--w);
+      transition: 0.3s;
+    }
+
+    /* Menu Mobile */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(9, 4, 20, 0.98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 24px 24px;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      z-index: 199;
+    }
+    .mobile-menu a {
+      padding: 14px 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--w7);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .mobile-menu .mobile-cta {
+      margin-top: 16px;
+      text-align: center;
+      background: var(--lilas);
+      color: var(--w);
+      padding: 14px;
+      border-radius: 100px;
+      font-weight: 700;
+    }
+
+    @media(max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .mobile-menu.open { display: flex; }
+    }
+
+    /* ── HERO SECTION (SPLIT) ── */
+    .hero-local {
+      padding: 100px 24px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+    }
+    .hero-local::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 40%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(168, 99, 255, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .eyebrow-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line2);
+      color: var(--lilas);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      background: rgba(168, 99, 255, 0.05);
+    }
+    .hero-content h1 {
+      font-family: var(--font-d);
+      font-size: clamp(38px, 5.5vw, 54px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+    .hero-content h1 em {
+      font-style: italic;
+      color: var(--lilas);
+      font-weight: 700;
+    }
+    .hero-content .lead {
+      font-size: clamp(16px, 2.2vw, 18px);
+      color: var(--w7);
+      margin-bottom: 38px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--lilas);
+      color: var(--w);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      padding: 18px 36px;
+      border-radius: 100px;
+      transition: all 0.25s;
+      box-shadow: 0 4px 20px rgba(168, 99, 255, 0.3);
+    }
+    .btn-main:hover {
+      background: var(--medio);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line2);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--w7);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 17px 32px;
+      border-radius: 100px;
+      transition: all 0.25s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--lilas);
+      color: var(--w);
+      background: rgba(168, 99, 255, 0.04);
+    }
+
+    /* Mockup Lateral */
+    .hero-media {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .media-card {
+      width: 100%;
+      max-width: 440px;
+      background: linear-gradient(145deg, rgba(21, 13, 39, 0.8), rgba(9, 4, 20, 0.95));
+      border: 1px solid var(--line2);
+      border-radius: 24px;
+      padding: 12px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+      position: relative;
+    }
+    .media-card img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 16px;
+      filter: brightness(0.9) contrast(1.05);
+    }
+    .media-badge {
+      position: absolute;
+      bottom: 24px;
+      right: -20px;
+      background: rgba(21, 13, 39, 0.9);
+      border: 1px solid var(--line2);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .badge-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(168, 99, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--lilas);
+      font-size: 20px;
+    }
+    .badge-info span {
+      display: block;
+      font-size: 11px;
+      color: var(--w5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .badge-info strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--w);
+    }
+
+    @media(max-width: 960px) {
+      .hero-local {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 60px;
+        gap: 48px;
+      }
+      .eyebrow-badge { margin: 0 auto 24px; }
+      .hero-buttons { justify-content: center; }
+      .media-badge { right: 20px; }
+    }
+
+    /* ── SEÇÕES COMUNS / DIVISORES ── */
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--lilas);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--font-d);
+      font-size: clamp(32px, 4.5vw, 42px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--lilas);
+    }
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--w5);
+      line-height: 1.6;
+    }
+
+    /* ── SEÇÃO COMO FUNCIONA (O PROCESSO) ── */
+    .como-funciona-sec {
+      padding: 80px 24px;
+      background: linear-gradient(180deg, var(--bg), var(--bg2));
+    }
+    .process-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .process-card {
+      background: var(--bg2);
+      padding: 48px 32px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .process-card:hover {
+      background: rgba(26, 17, 48, 0.7);
+    }
+    .process-num {
+      font-family: var(--font-d);
+      font-size: 44px;
+      font-style: italic;
+      color: var(--lilas);
+      opacity: 0.35;
+      line-height: 1;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+    .process-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--w);
+    }
+    .process-card p {
+      font-size: 14px;
+      color: var(--w5);
+      line-height: 1.6;
+    }
+
+    @media(max-width: 1024px) {
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width: 600px) {
+      .process-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── SEÇÃO O QUE ESTÁ INCLUÍDO (ENTREGÁVEIS) ── */
+    .incluido-sec {
+      padding: 80px 24px;
+      background: var(--bg2);
+      position: relative;
+    }
+    .incluido-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .incluido-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.25s;
+    }
+    .incluido-card:hover {
+      border-color: var(--line2);
+      background: rgba(168, 99, 255, 0.04);
+      transform: translateY(-2px);
+    }
+    .icon-check {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(168, 99, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--lilas);
+      font-size: 12px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .incluido-card span {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--w7);
+    }
+
+    /* ── SEÇÃO PLANOS ── */
+    .planos-sec {
+      padding: 100px 24px;
+      background: linear-gradient(180deg, var(--bg2), var(--bg));
+    }
+    .planos-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+    .plano-card {
+      background: rgba(21, 13, 39, 0.5);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 44px 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .plano-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--line2);
+    }
+    .plano-card.destaque {
+      border-color: var(--lineg);
+      background: linear-gradient(180deg, rgba(200, 155, 74, 0.08) 0%, rgba(21, 13, 39, 0.8) 100%);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .plano-badge {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: rgba(200, 155, 74, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      padding: 6px 14px;
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+    .plano-header { margin-bottom: 32px; }
+    .plano-header h4 {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--w5);
+      margin-bottom: 12px;
+    }
+    .plano-card.destaque .plano-header h4 { color: var(--gold); }
+    .plano-price {
+      font-family: var(--font-d);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--w);
+      line-height: 1;
+    }
+    .plano-price span {
+      font-family: var(--font-b);
+      font-size: 14px;
+      color: var(--w5);
+      font-weight: 300;
+    }
+    .plano-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+      flex-grow: 1;
+    }
+    .plano-features li {
+      font-size: 14px;
+      color: var(--w7);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.4;
+    }
+    .plano-features li::before {
+      content: '✓';
+      color: var(--lilas);
+      font-weight: 700;
+    }
+    .plano-card.destaque .plano-features li::before { color: var(--gold); }
+    
+    .plano-btn {
+      width: 100%;
+      text-align: center;
+      padding: 16px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.25s;
+      display: block;
+    }
+    .plano-btn.primary {
+      background: var(--lilas);
+      color: var(--w);
+    }
+    .plano-btn.primary:hover { background: var(--medio); }
+    .plano-btn.secondary {
+      border: 1px solid var(--line2);
+      color: var(--w7);
+    }
+    .plano-btn.secondary:hover {
+      border-color: var(--lilas);
+      color: var(--w);
+    }
+    .plano-btn.gold {
+      background: var(--gold);
+      color: var(--bg);
+    }
+    .plano-btn.gold:hover {
+      background: #dfb25e;
+    }
+
+    @media(max-width: 900px) {
+      .planos-grid { grid-template-columns: 1fr; max-width: 440px; }
+    }
+
+    /* ── SEÇÃO BENEFÍCIOS ── */
+    .beneficios-sec {
+      padding: 80px 24px;
+      background: var(--bg);
+    }
+    .beneficios-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .beneficio-card {
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 40px 32px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .beneficio-card:hover {
+      border-color: var(--line2);
+      background: rgba(168, 99, 255, 0.03);
+      transform: translateY(-3px);
+    }
+    .beneficio-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(168, 99, 255, 0.1);
+      border: 1px solid var(--line2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--lilas);
+      font-size: 22px;
+      margin: 0 auto 24px;
+    }
+    .beneficio-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--w);
+    }
+
+    @media(max-width: 900px) {
+      .beneficios-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width: 600px) {
+      .beneficios-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── SEÇÃO CTA FINAL (RAIO-X) ── */
+    .cta-final-sec {
+      padding: 100px 24px;
+      background: linear-gradient(180deg, var(--bg), var(--bg2));
+      position: relative;
+    }
+    .cta-final-sec::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(168, 99, 255, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, rgba(21, 13, 39, 0.6), rgba(9, 4, 20, 0.9));
+      border: 1px solid var(--line2);
+      border-radius: 32px;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .cta-container h2 {
+      font-family: var(--font-d);
+      font-size: clamp(28px, 4.5vw, 40px);
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .cta-container h2 em {
+      font-style: italic;
+      color: var(--lilas);
+    }
+    .cta-container p {
+      font-size: 16px;
+      color: var(--w7);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER MASTER ── */
+    .footer-master {
+      background: var(--bg);
+      border-top: 1px solid var(--line);
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .footer-logo img {
+      height: 38px;
+      border-radius: 8px;
+    }
+    .footer-logo-text strong {
+      display: block;
+      font-family: var(--font-logo);
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .footer-logo-text span {
+      display: block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--lilas);
+      text-transform: uppercase;
+    }
+    .footer-master p {
+      font-size: 12px;
+      color: var(--w3);
+      letter-spacing: 0.05em;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--w5);
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      transition: all 0.2s;
+    }
+    .footer-links a:hover {
+      color: var(--w);
+      border-color: var(--line2);
+      background: rgba(255,255,255,0.02);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-banner">
+    🔥 Otimize hoje seu posicionamento no Google Maps e seja encontrado por mais clientes
+  </div>
+
+  <nav class="nav-master">
+    <div class="nav-master-inner">
+      <a href="../../index.html" class="nav-logo">
+        <img src="https://res.cloudinary.com/dslj0yjkm/image/upload/v1777067404/logo_zpxkzh.png" alt="Logo Presença Pro">
+        <div class="nav-logo-text">
+          <strong>Presença Pro</strong>
+          <span>Agência Digital</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#como-funciona" class="nav-link">Como Funciona</a>
+        <a href="#incluido" class="nav-link">O que Inclui</a>
+        <a href="#planos" class="nav-link">Planos</a>
+        <a href="#beneficios" class="nav-link">Benefícios</a>
+      </div>
+      <a href="https://wa.me/5585994273822?text=Olá! Gostaria de saber mais sobre a Otimização de Perfil da Empresa no Google (Presença Local)." class="nav-cta" target="_blank" rel="noopener">Solicitar Raio-X</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#como-funciona">Como Funciona</a>
+    <a href="#incluido">O que Inclui</a>
+    <a href="#planos">Planos</a>
+    <a href="#beneficios">Benefícios</a>
+    <a href="https://wa.me/5585994273822?text=Olá! Gostaria de saber mais sobre a Otimização de Perfil da Empresa no Google (Presença Local)." class="mobile-cta" target="_blank" rel="noopener">Solicitar Raio-X</a>
+  </div>
+
+  <section class="hero-local reveal">
+    <div class="hero-content">
+      <div class="eyebrow-badge">Otimização de Perfil</div>
+      <h1>Sua empresa está preparada para ser encontrada no <em>Google?</em></h1>
+      <p class="lead">Milhares de pessoas pesquisam diariamente por empresas próximas a elas. Um perfil perfeitamente estruturado e otimizado aumenta sua visibilidade, transmite mais autoridade e facilita o contato direto com novos clientes.</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/5585994273822?text=Quero solicitar uma análise gratuita do meu perfil no Google." class="btn-main" target="_blank" rel="noopener">Solicitar Análise Gratuita</a>
+        <a href="#planos" class="btn-secondary">Conhecer os Planos</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="media-card">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Empresário utilizando Google Maps e computador">
+        <div class="media-badge">
+          <div class="badge-icon">📍</div>
+          <div class="badge-info">
+            <span>Visibilidade</span>
+            <strong>Google Maps</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="como-funciona-sec" id="como-funciona">
+    <div class="section-header reveal">
+      <span class="section-label">Passo a passo</span>
+      <h2 class="section-title">Como <em>funciona?</em></h2>
+      <p class="section-subtitle">Um fluxo estruturado e planejado com foco em otimização, boas práticas e melhoria contínua de sua imagem local.</p>
+    </div>
+
+    <div class="process-grid reveal">
+      <div class="process-card">
+        <div class="process-num">01</div>
+        <h3>Diagnóstico</h3>
+        <p>Analisamos profundamente seu Perfil da Empresa atual, identificando pontos críticos de melhoria.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">02</div>
+        <h3>Otimização</h3>
+        <p>Organizamos todas as informações de forma estratégica e focada na melhor experiência de busca.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">03</div>
+        <h3>Atualização</h3>
+        <p>Configuramos e estruturamos fotos, categorias perfeitas, serviços oferecidos e publicações.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">04</div>
+        <h3>Acompanhamento</h3>
+        <p>Mantemos seu perfil estruturado, analisando novas necessidades para atualizações contínuas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="incluido-sec" id="incluido">
+    <div class="section-header reveal">
+      <span class="section-label">Cobertura Completa</span>
+      <h2 class="section-title">O que está <em>incluído?</em></h2>
+      <p class="section-subtitle">Toda a configuração essencial para estruturar de ponta a ponta o perfil oficial do seu negócio.</p>
+    </div>
+
+    <div class="incluido-grid reveal">
+      <div class="incluido-card">
+        <div class="icon-check">✓</div>
+        <span>Categoria correta</span>
+      </div>
+      <div class="incluido-card">
+        <div class="icon-check">✓</div>
+        <span>Descrição otimizada</span>
+      </div>
+      <div class="incluido-card">
+        <div class="icon-check">✓</div>
+        <span>Fotos organizadas</span>
+      </div>
+      <div class="incluido-card">
+        <div class="icon-check">✓</div>
+        <span>Serviços cadastrados</span>
+      </div>
+      <div class="incluido-card">
+        <div class="icon-check">✓</div>
+        <span>Produtos estruturados</span>
+      </div>
+      <div class="incluido-card">
+        <div class="icon-check">✓</div>
+        <span>Horários corretos</span>
+      </div>
+      <div class="incluido-card">
+        <div class="icon-check">✓</div>
+        <span>Integração WhatsApp</span>
+      </div>
+      <div class="incluido-card">
+        <div class="icon-check">✓</div>
+        <span>Foco em Avaliações</span>
+      </div>
+      <div class="incluido-card">
+        <div class="icon-check">✓</div>
+        <span>Postagens Iniciais</span>
+      </div>
+      <div class="incluido-card">
+        <div class="icon-check">✓</div>
+        <span>Monitoramento local</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="planos-sec" id="planos">
+    <div class="section-header reveal">
+      <span class="section-label">Planos e Valores</span>
+      <h2 class="section-title">O investimento <em>ideal</em></h2>
+      <p class="section-subtitle">Escolha o nível de acompanhamento ideal para o seu negócio se consolidar regionalmente no ecossistema de buscas.</p>
+    </div>
+
+    <div class="planos-grid reveal">
+      <div class="plano-card">
+        <div class="plano-header">
+          <h4>Essencial</h4>
+          <h3>Presença Local Essencial</h3>
+          <div class="plano-price">R$ 247</div>
+        </div>
+        <ul class="plano-features">
+          <li>Setup completo do perfil</li>
+          <li>Revisão de categorias principais</li>
+          <li>Estruturação de dados vitais</li>
+          <li>Otimização de imagens iniciais</li>
+        </ul>
+        <a href="https://wa.me/5585994273822?text=Gostaria de contratar o plano Presença Local Essencial." class="plano-btn secondary" target="_blank" rel="noopener">Contratar Setup</a>
+      </div>
+
+      <div class="plano-card destaque">
+        <div class="plano-badge">Recomendado</div>
+        <div class="plano-header">
+          <h4>Mensal</h4>
+          <h3>Gestão Mensal</h3>
+          <div class="plano-price">R$ 97 <span>/ mês</span></div>
+        </div>
+        <ul class="plano-features">
+          <li>Tudo do Setup Essencial</li>
+          <li>Atualizações de dados periódicos</li>
+          <li>Postagens recorrentes no perfil</li>
+          <li>Suporte contínuo a dúvidas</li>
+          <li>Acompanhamento de relatórios</li>
+        </ul>
+        <a href="https://wa.me/5585994273822?text=Gostaria de contratar o plano de Gestão Mensal." class="plano-btn gold" target="_blank" rel="noopener">Assinar Mensal</a>
+      </div>
+
+      <div class="plano-card">
+        <div class="plano-header">
+          <h4>Avançado</h4>
+          <h3>Gestão Avançada</h3>
+          <div class="plano-price">R$ 177 <span>/ mês</span></div>
+        </div>
+        <ul class="plano-features">
+          <li>Gestão de perfil totalmente delegada</li>
+          <li>Postagens semanais otimizadas</li>
+          <li>Foco total em captação de reviews</li>
+          <li>Cadastro avançado de produtos</li>
+          <li>Relatório analítico mensal</li>
+        </ul>
+        <a href="https://wa.me/5585994273822?text=Gostaria de contratar o plano de Gestão Avançada." class="plano-btn secondary" target="_blank" rel="noopener">Contratar Avançado</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beneficios-sec" id="beneficios">
+    <div class="section-header reveal">
+      <span class="section-label">Resultados</span>
+      <h2 class="section-title">Quais os <em>benefícios?</em></h2>
+      <p class="section-subtitle">Otimizar continuamente o Perfil de sua Empresa é o caminho mais seguro para expandir suas conexões locais.</p>
+    </div>
+
+    <div class="beneficios-grid reveal">
+      <div class="beneficio-card">
+        <div class="beneficio-icon">📈</div>
+        <h3>Mais visibilidade.</h3>
+      </div>
+      <div class="beneficio-card">
+        <div class="beneficio-icon">⭐</div>
+        <h3>Mais credibilidade.</h3>
+      </div>
+      <div class="beneficio-card">
+        <div class="beneficio-icon">💬</div>
+        <h3>Mais contatos.</h3>
+      </div>
+      <div class="beneficio-card">
+        <div class="beneficio-icon">📞</div>
+        <h3>Mais ligações.</h3>
+      </div>
+      <div class="beneficio-card">
+        <div class="beneficio-icon">🚗</div>
+        <h3>Mais visitas.</h3>
+      </div>
+      <div class="beneficio-card">
+        <div class="beneficio-icon">🤝</div>
+        <h3>Mais oportunidades.</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final-sec reveal">
+    <div class="cta-container">
+      <h2>Descubra sua nota com o <em>Raio-X Essencial</em></h2>
+      <p>Solicite gratuitamente uma análise diagnóstica sem compromisso e descubra onde e como sua empresa pode melhorar sua presença local hoje mesmo.</p>
+      <a href="https://wa.me/5585994273822?text=Olá! Solicito o meu Raio-X Essencial gratuito do meu posicionamento local." class="btn-main" target="_blank" rel="noopener">Solicitar Raio-X Essencial</a>
+    </div>
+  </section>
+
+  <footer class="footer-master">
+    <div class="footer-logo">
+      <img src="https://res.cloudinary.com/dslj0yjkm/image/upload/v1777067404/logo_zpxkzh.png" alt="Presença Pro">
+      <div class="footer-logo-text">
+        <strong>Presença Pro</strong>
+        <span>Agência Digital</span>
+      </div>
+    </div>
+    <p>© 2026 PRESENÇA PRO. TODOS OS DIREITOS RESERVADOS.</p>
+    <div class="footer-links">
+      <a href="#">Termos de Uso</a>
+      <a href="#">Política de Privacidade</a>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle Menu Mobile
+    const hamburger = document.getElementById('navHamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const spans = hamburger.querySelectorAll('span');
+      if (mobileMenu.classList.contains('open')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    });
+
+    // Fechar Menu Mobile ao clicar em links
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      });
+    });
+
+    // IntersectionObserver para Reveal on Scroll (idêntico ao do site principal)
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // Active Link indicator de acordo com Scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function updateActive() {
+      let current = '';
+      sections.forEach(s => {
+        const top = s.getBoundingClientRect().top;
+        if (top <= 160) current = s.id;
+      });
+      navLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+      });
+    }
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
+  </script>
+</body>
+</html>
