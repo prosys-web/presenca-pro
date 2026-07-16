@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade Presença Pro | Estrutura • Posicionamento • Presença Digital</title>
+    <meta name="description" content="Participe gratuitamente da Comunidade Presença Pro e tenha acesso a conteúdos, networking, materiais práticos e oportunidades para fortalecer pequenos negócios.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Paleta Oficial (Imutável) */
+            --bg-dark: #090414;
+            --bg-card: #150D27;
+            --roxo-primary: #5415A3;
+            --roxo-light: #A863FF;
+            --roxo-mid: #9C5BFF;
+            --gold: #C89B4A;
+            --text-main: #FFFFFF;
+            --text-muted: #B3ADC0;
+            --border-color: rgba(168, 99, 255, 0.18);
+            
+            /* Escala Tipográfica (Imutável) */
+            --font-body: 'Inter', sans-serif;
+            --font-title: 'Playfair Display', serif;
+            --font-logo: 'Montserrat', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-title); font-weight: 700; line-height: 1.2; }
+        a { text-decoration: none; transition: all 0.3s ease; }
+        img { max-width: 100%; height: auto; display: block; }
+        
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .gold-text { color: var(--gold); font-style: italic; font-weight: inherit; }
+        .roxo-text { color: var(--roxo-light); }
+
+        /* NAV-01: HEADER OFICIAL (COMPONENTE GLOBAL) */
+        .site-header {
+            background-color: rgba(8, 5, 15, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .site-header .container { display: flex; justify-content: space-between; align-items: center; padding: 0 32px; }
+        .brand-logo { display: flex; align-items: center; gap: 12px; }
+        .brand-logo img { height: 42px; width: auto; border-radius: 9px; }
+        .brand-text { display: flex; flex-direction: column; justify-content: center; }
+        .brand-text .title {
+            font-family: var(--font-logo); font-weight: 700; font-size: 17px;
+            color: var(--text-main); line-height: 1.2; letter-spacing: 0.5px;
+        }
+        .brand-text .subtitle {
+            font-family: var(--font-body); font-size: 9px; color: var(--roxo-light);
+            text-transform: uppercase; letter-spacing: 0.2em; font-weight: 500; margin-top: 2px;
+        }
+        .main-nav ul { display: flex; gap: 8px; list-style: none; }
+        .main-nav a {
+            font-family: var(--font-body); color: rgba(255,255,255,0.55); font-size: 13px; font-weight: 600;
+            letter-spacing: 0.05em; padding: 10px 18px; border-radius: 100px; display: inline-block;
+            border: 1px solid transparent;
+        }
+        .main-nav a:hover, .main-nav a.active {
+            color: #fff; background-color: rgba(168,99,255,0.12); border-color: var(--line-forte, rgba(168,99,255,0.35));
+        }
+        .header-cta { display: flex; align-items: center; gap: 16px; }
+        
+        /* BTN-01: BOTÕES (COMPONENTE GLOBAL) */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 14px 32px; border-radius: 50px; font-family: var(--font-body); font-weight: 600;
+            font-size: 0.95rem; letter-spacing: 0.5px; transition: all 0.3s ease; cursor: pointer; text-align: center;
+        }
+        .btn-primary {
+            background-color: var(--roxo-light); color: var(--text-main); border: 1px solid var(--roxo-light); box-shadow: 0 4px 15px rgba(168, 99, 255, 0.35);
+        }
+        .btn-primary:hover {
+            background-color: var(--roxo-primary); border-color: var(--roxo-primary); color: var(--text-main);
+            box-shadow: 0 6px 20px rgba(84, 21, 163, 0.5); transform: translateY(-2px);
+        }
+        .btn-secondary { background-color: transparent; color: var(--text-main); border: 1px solid var(--border-color); }
+        .btn-secondary:hover { border-color: var(--roxo-light); color: var(--roxo-light); background-color: rgba(168, 99, 255, 0.05); }
+
+        /* HERO-01: HERO SECTION (COMPONENTE GLOBAL) */
+        .hero { padding: 120px 0 80px; text-align: center; position: relative; }
+        .hero::before {
+            content: ''; position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 800px; background: radial-gradient(circle, rgba(84, 21, 163, 0.15) 0%, rgba(9, 4, 20, 0) 70%); z-index: -1; pointer-events: none;
+        }
+        .hero-eyebrow {
+            font-family: var(--font-body); color: var(--roxo-light); font-size: 0.85rem; text-transform: uppercase;
+            letter-spacing: 2px; font-weight: 600; margin-bottom: 24px; display: inline-block;
+        }
+        .hero h1 { font-size: 4rem; margin-bottom: 24px; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 750px; margin: 0 auto 40px; }
+        .hero-cta-group { display: flex; gap: 16px; justify-content: center; align-items: center; }
+
+        /* BANNER-COMUNIDADE: BANNER DE IMAGEM (faixa cheia, padrão media-card do modelo de referência) */
+        .community-banner { max-width: 1200px; margin: 0 auto; padding: 0 24px 20px; }
+        .community-banner-card {
+            position: relative; border-radius: 24px; overflow: hidden;
+            border: 1px solid rgba(168, 99, 255, 0.35);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+        .community-banner-card img {
+            width: 100%; height: 420px; object-fit: cover; display: block;
+            filter: brightness(0.85) contrast(1.05);
+        }
+        .community-banner-card::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(180deg, rgba(9,4,20,0) 40%, rgba(9,4,20,0.85) 100%);
+        }
+        .community-banner-badge {
+            position: absolute; left: 32px; bottom: 28px; z-index: 2;
+            display: flex; align-items: center; gap: 12px;
+            background: rgba(21,13,39,0.85); border: 1px solid rgba(168,99,255,0.35);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px; padding: 16px 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .community-banner-badge .badge-icon {
+            width: 42px; height: 42px; border-radius: 10px; background: rgba(168,99,255,0.15);
+            display: flex; align-items: center; justify-content: center; color: var(--roxo-light); font-size: 20px; flex-shrink: 0;
+        }
+        .community-banner-badge .badge-info span { display: block; font-size: 11px; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.1em; }
+        .community-banner-badge .badge-info strong { display: block; font-size: 15px; font-weight: 700; color: #fff; margin-top: 2px; }
+        @media (max-width: 600px) {
+            .community-banner-card img { height: 260px; }
+            .community-banner-badge { left: 16px; right: 16px; bottom: 16px; padding: 12px 16px; }
+        }
+
+        /* CARD-01: SEÇÕES E CARDS (COMPONENTE GLOBAL) */
+        .section { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 64px; }
+        .section-header h2 { font-size: 2.8rem; margin-bottom: 16px; }
+        .section-header p { color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
+        
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .card {
+            background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px;
+            padding: 28px 22px; transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;
+        }
+        .card:hover { border-color: var(--roxo-light); transform: translateY(-2px); }
+        .card-icon {
+            font-size: 2rem; margin-bottom: 24px; display: inline-flex; align-items: center; justify-content: center;
+            width: 60px; height: 60px; background: rgba(168, 99, 255, 0.1); border-radius: 12px; color: var(--roxo-light);
+        }
+        .card h3 { font-family: var(--font-body); font-size: 1.25rem; margin-bottom: 16px; color: var(--text-main); }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; flex-grow: 1; }
+
+        /* CARD-02: TAG CARDS PEQUENOS */
+        .grid-tags { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+        .tag-card {
+            background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 20px 24px;
+            border-radius: 12px; display: flex; align-items: center; gap: 12px; font-weight: 500; font-size: 1rem; transition: all 0.3s ease;
+        }
+        .tag-card:hover { border-color: var(--roxo-mid); }
+        .tag-card i { color: var(--gold); font-style: normal; }
+
+        /* TIME-01: TIMELINE (COMPONENTE GLOBAL) */
+        .timeline-wrapper { display: flex; flex-direction: column; align-items: center; max-width: 600px; margin: 0 auto; }
+        .timeline-step {
+            background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 20px 32px;
+            border-radius: 50px; width: 100%; text-align: center; font-weight: 600; color: var(--text-main); font-size: 1.05rem; position: relative; z-index: 2;
+        }
+        .timeline-step.highlight { border-color: var(--gold); color: var(--gold); background-color: rgba(200, 155, 74, 0.05); }
+        .timeline-connector { width: 2px; height: 40px; background: linear-gradient(to bottom, var(--border-color), var(--roxo-light), var(--border-color)); margin: 8px 0; }
+
+        /* FAQ-01: LISTAS DE PERGUNTAS */
+        .faq-item {
+            background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px;
+            padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: all 0.3s ease; margin-bottom: 16px;
+        }
+        .faq-item:hover { border-color: var(--roxo-mid); }
+        .faq-item h3 { margin: 0; font-family: var(--font-body); font-size: 1.1rem; color: var(--text-main); }
+        .faq-item span { color: var(--roxo-light); font-weight: bold; font-size: 1.5rem; }
+
+        /* FOOT-01: FOOTER OFICIAL (COMPONENTE GLOBAL) */
+        .site-footer {
+            background-color: var(--bg-card); border-top: 1px solid var(--border-color); padding: 80px 0 30px; margin-top: 60px;
+        }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .footer-brand p { color: var(--text-muted); font-size: 0.95rem; max-width: 350px; margin-top: 24px; }
+        .footer-col h4 { font-family: var(--font-body); font-size: 1.1rem; color: var(--text-main); margin-bottom: 24px; font-weight: 600; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+        .footer-col a, .footer-col p { color: var(--text-muted); font-size: 0.95rem; transition: color 0.3s ease; }
+        .footer-col a:hover { color: var(--text-main); }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border-color); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+        }
+        .footer-bottom p { color: var(--text-muted); font-size: 0.85rem; }
+
+        /* ANIMAÇÕES REVEAL PADRÃO */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        
+        /* RESPONSIVIDADE OFICIAL */
+        @media (max-width: 992px) {
+            .main-nav { display: none; }
+            .header-cta .btn { display: none; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .footer-brand { margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+            .brand-logo { justify-content: center; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .hero-cta-group { flex-direction: column; }
+            .hero-cta-group .btn { width: 100%; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="brand-logo">
+                <img src="https://res.cloudinary.com/dslj0yjkm/image/upload/v1782608878/logo_colorida_q8ewmc.png" alt="Logomarca Presença Pro">
+                <div class="brand-text">
+                    <span class="title">Presença Pro</span>
+                    <span class="subtitle">Estrutura • Posicionamento • Presença Digital</span>
+                </div>
+            </a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../servicos/index.html">Serviços</a></li>
+                    <li><a href="index.html" class="active">Comunidade</a></li>
+                    <li><a href="../rede-de-parceiros/index.html">Rede de Parceiros</a></li>
+                    <li><a href="../portfolio/index.html">Portfólio</a></li>
+                    <li><a href="../contato/index.html">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-cta">
+                <a href="https://wa.me/5585994249656" target="_blank" class="btn btn-primary">Falar no WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container reveal">
+            <span class="hero-eyebrow">Comunidade Presença Pro — Aprenda. Conecte-se. Evolua.</span>
+            <h1>Você não precisa crescer <span class="gold-text">sozinho</span>.</h1>
+            <p>Empreender fica mais fácil quando você aprende com quem vive os mesmos desafios. A Comunidade Presença Pro reúne empresários, profissionais e parceiros que compartilham experiências, conteúdos práticos, oportunidades e conexões para fortalecer pequenos negócios.</p>
+            <div class="hero-cta-group">
+                <a href="#entrar" class="btn btn-primary">Entrar na Comunidade</a>
+                <a href="../rede-de-parceiros/index.html" class="btn btn-secondary">Conhecer a Rede de Parceiros</a>
+            </div>
+        </section>
+
+        <div class="community-banner reveal delay-1">
+            <div class="community-banner-card">
+                <img src="https://images.unsplash.com/photo-1758873269276-9518d0cb4a0b?auto=format&fit=crop&w=1600&q=80" alt="Empreendedores da Comunidade Presença Pro trocando experiências e se conectando">
+                <div class="community-banner-badge">
+                    <div class="badge-icon">🤝</div>
+                    <div class="badge-info">
+                        <span>Comunidade Presença Pro</span>
+                        <strong>Estrutura • Posicionamento • Presença Digital</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section container reveal delay-2">
+            <div class="section-header">
+                <h2>Por que participar?</h2>
+            </div>
+            <div class="grid-cards">
+                <div class="card">
+                    <span class="card-icon">📚</span>
+                    <h3>Conteúdo Prático</h3>
+                    <p>Receba dicas, materiais e conteúdos voltados para estruturação, posicionamento e presença digital.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🤝</span>
+                    <h3>Networking</h3>
+                    <p>Amplie sua rede de contatos e conecte-se com empresários e profissionais de diferentes áreas.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">💡</span>
+                    <h3>Oportunidades</h3>
+                    <p>Conheça projetos, indicações, parcerias e novas possibilidades de negócios.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🚀</span>
+                    <h3>Aprendizado Contínuo</h3>
+                    <p>Tenha acesso a experiências reais, ferramentas e boas práticas para aplicar no seu dia a dia.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container reveal">
+            <div class="section-header">
+                <h2>Para <span class="gold-text">quem</span> é?</h2>
+            </div>
+            <div class="grid-tags">
+                <div class="tag-card">Pequenos empresários</div>
+                <div class="tag-card">Profissionais autônomos</div>
+                <div class="tag-card">Prestadores de serviços</div>
+                <div class="tag-card">Empreendedores iniciantes</div>
+                <div class="tag-card">Parceiros da Presença Pro</div>
+                <div class="tag-card">Empresas que desejam crescer de forma estruturada</div>
+            </div>
+        </section>
+
+        <section class="section container reveal">
+            <div class="section-header">
+                <h2>O que você <span class="roxo-text">encontra</span></h2>
+            </div>
+            <div class="grid-tags">
+                <div class="tag-card"><i>✔</i> Conteúdos exclusivos</div>
+                <div class="tag-card"><i>✔</i> Dicas práticas</div>
+                <div class="tag-card"><i>✔</i> Networking</div>
+                <div class="tag-card"><i>✔</i> Materiais gratuitos</div>
+                <div class="tag-card"><i>✔</i> Ferramentas recomendadas</div>
+                <div class="tag-card"><i>✔</i> Oportunidades de negócios</div>
+                <div class="tag-card"><i>✔</i> Eventos e novidades</div>
+                <div class="tag-card"><i>✔</i> Compartilhamento de experiências</div>
+            </div>
+        </section>
+
+        <section class="section container reveal">
+            <div class="section-header">
+                <h2>Como <span class="gold-text">Funciona</span></h2>
+            </div>
+            <div class="timeline-wrapper">
+                <div class="timeline-step">1. Entre gratuitamente.</div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step">2. Participe das conversas e acompanhe os conteúdos.</div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step">3. Conecte-se com outros empresários e parceiros.</div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step highlight">4. Transforme conhecimento em oportunidades para o seu negócio.</div>
+            </div>
+        </section>
+
+        <section class="section container reveal">
+            <div class="section-header">
+                <h2>O Ecossistema Presença Pro</h2>
+                <p>Cada etapa fortalece um aspecto do negócio, permitindo evolução gradual conforme a necessidade do empreendedor.</p>
+            </div>
+            <div class="timeline-wrapper">
+                <div class="timeline-step">Raio-X Essencial</div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step">Presença Local</div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step">Estruturação Empresarial</div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step highlight">Comunidade (Você está aqui)</div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step">Rede de Parceiros</div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step">Inteligência Artificial</div>
+            </div>
+        </section>
+
+        <section class="section container reveal">
+            <div class="section-header">
+                <h2>Perguntas Frequentes</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <h3>A comunidade é gratuita?</h3>
+                    <span>+</span>
+                </div>
+                <div class="faq-item">
+                    <h3>Preciso ser cliente da Presença Pro?</h3>
+                    <span>+</span>
+                </div>
+                <div class="faq-item">
+                    <h3>Como participo?</h3>
+                    <span>+</span>
+                </div>
+                <div class="faq-item">
+                    <h3>Existe algum compromisso?</h3>
+                    <span>+</span>
+                </div>
+                <div class="faq-item">
+                    <h3>Posso convidar outras pessoas?</h3>
+                    <span>+</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container reveal" style="text-align: center;">
+            <h2>Faça parte da Comunidade Presença Pro.</h2>
+            <p style="color: var(--text-muted); max-width: 650px; margin: 24px auto 48px; font-size: 1.15rem;">Conecte-se com empresários, compartilhe experiências, descubra novas oportunidades e acompanhe conteúdos práticos para fortalecer o seu negócio.</p>
+            <div class="hero-cta-group">
+                <a href="#entrar" class="btn btn-primary">Entrar na Comunidade</a>
+                <a href="../servicos/presenca-local/index.html" class="btn btn-secondary">Conhecer a Presença Local</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand-logo">
+                        <img src="https://res.cloudinary.com/dslj0yjkm/image/upload/v1782608878/logo_colorida_q8ewmc.png" alt="Presença Pro">
+                        <div class="brand-text">
+                            <span class="title">Presença Pro</span>
+                            <span class="subtitle">Estrutura • Posicionamento • Presença Digital</span>
+                        </div>
+                    </a>
+                    <p>Ajudamos pequenos negócios a organizar processos, fortalecer sua presença digital e identificar oportunidades de crescimento de forma estruturada e personalizada.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../servicos/index.html">Serviços</a></li>
+                        <li><a href="index.html">Comunidade</a></li>
+                        <li><a href="../rede-de-parceiros/index.html">Rede de Parceiros</a></li>
+                        <li><a href="../portfolio/index.html">Portfólio</a></li>
+                        <li><a href="../contato/index.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><p>Fortaleza — CE</p></li>
+                        <li><a href="mailto:presenca.proagencia@gmail.com">presenca.proagencia@gmail.com</a></li>
+                        <li><p>(85) 99424-9656</p></li>
+                        <li><a href="https://wa.me/5585994249656" target="_blank" style="color: var(--roxo-light);">WhatsApp</a></li>
+                        <li><a href="#" target="_blank" style="color: var(--roxo-light);">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Presença Pro. Todos os direitos reservados.</p>
+                <p>Estrutura • Posicionamento • Presença Digital</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
