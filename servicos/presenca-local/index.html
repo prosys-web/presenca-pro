@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presença Local | Presença Pro</title>
+  <meta name="description" content="Apareça no Google quando alguém buscar pelo seu serviço na sua cidade. Configuração completa do Perfil da Empresa no Google — visibilidade local imediata.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Presença Local | Presença Pro">
+  <meta property="og:description" content="Sua empresa está preparada para ser encontrada no Google? Estruturamos seu Perfil da Empresa para você aparecer nos resultados locais.">
+  <meta property="og:image" content="https://res.cloudinary.com/dslj0yjkm/image/upload/v1777067404/preview_cxbivk.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://presenca.revizi.com.br/servicos/presenca-local/">
+  <meta property="og:site_name" content="Presença Pro">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#090414; --bg2:#150D27; --bg3:#1A1130;
+      --roxo:#5415A3; --lilas:#A863FF; --medio:#9C5BFF; --gold:#C89B4A;
+      --w:#FFFFFF; --w7:rgba(255,255,255,0.70); --w5:rgba(255,255,255,0.50); --w3:rgba(255,255,255,0.30);
+      --line:rgba(168,99,255,0.18); --line2:rgba(168,99,255,0.35); --lineg:rgba(200,155,74,0.35);
+      --font-d:'Playfair Display',serif; --font-b:'Inter',sans-serif; --font-logo:'Montserrat',sans-serif;
+    }
+    html { scroll-behavior:smooth; }
+    body { background:var(--bg); color:var(--w); font-family:var(--font-b); font-weight:300; line-height:1.6; overflow-x:hidden; }
+    a { text-decoration:none; color:inherit; }
+    img { max-width:100%; display:block; }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* NAVBAR */
+    .nav-master { position:sticky; top:0; z-index:200; background:rgba(8,5,15,0.95); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid var(--line); min-height:80px; display:flex; align-items:center; transition:all 0.3s; }
+    .nav-master-inner { max-width:1200px; margin:0 auto; padding:0 32px; display:flex; align-items:center; justify-content:space-between; width:100%; }
+    .nav-logo { display:flex; align-items:center; gap:14px; }
+    .nav-logo img { height:48px; border-radius:10px; }
+    .nav-logo-text strong { display:block; font-family:var(--font-logo); font-size:18px; font-weight:700; color:var(--w); }
+    .nav-logo-text span { display:block; font-size:9px; font-weight:700; letter-spacing:0.18em; color:var(--lilas); text-transform:uppercase; margin-top:3px; }
+    .nav-links { display:flex; align-items:center; gap:4px; }
+    .nav-link { font-size:13px; font-weight:600; color:var(--w5); padding:10px 16px; border-radius:100px; transition:all 0.25s; border:1px solid transparent; }
+    .nav-link:hover,.nav-link.active { color:var(--w); background:rgba(168,99,255,0.12); border-color:var(--line2); }
+    .nav-cta { background:var(--lilas); color:var(--w); font-size:13px; font-weight:700; padding:12px 26px; border-radius:100px; transition:all 0.25s; border:1px solid rgba(255,255,255,0.1); box-shadow:0 4px 16px rgba(168,99,255,0.3); white-space:nowrap; }
+    .nav-cta:hover { background:var(--roxo); transform:translateY(-1px); }
+    .nav-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
+    .nav-hamburger span { display:block; width:22px; height:2px; background:var(--w); transition:0.3s; }
+    .mobile-menu { display:none; flex-direction:column; background:rgba(9,4,20,0.98); backdrop-filter:blur(20px); border-bottom:1px solid var(--line); padding:16px 24px 28px; position:absolute; width:100%; left:0; z-index:199; top:80px; }
+    .mobile-menu a { padding:14px 0; font-size:14px; font-weight:600; color:var(--w7); border-bottom:1px solid rgba(255,255,255,0.05); }
+    .mobile-menu .mobile-cta { margin-top:16px; text-align:center; background:var(--lilas); color:var(--w); padding:14px; border-radius:100px; font-weight:700; border-bottom:none; }
+    @media(max-width:1024px) { .nav-links,.nav-cta{display:none} .nav-hamburger{display:flex} .mobile-menu.open{display:flex} .nav-logo-text span{font-size:7px} }
+
+    /* HERO */
+    .hero-wrap { background:var(--bg); border-bottom:1px solid var(--line); position:relative; overflow:hidden; }
+    .hero-wrap::before { content:''; position:absolute; top:-20%; left:-5%; width:45%; height:100%; background:radial-gradient(circle,rgba(168,99,255,0.10) 0%,transparent 70%); pointer-events:none; }
+    .hero-local { max-width:1200px; margin:0 auto; padding:100px 32px 80px; display:grid; grid-template-columns:1fr 420px; align-items:center; gap:60px; position:relative; }
+    .eyebrow-badge { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line2); color:var(--lilas); padding:8px 20px; border-radius:100px; font-size:11px; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; margin-bottom:28px; background:rgba(168,99,255,0.05); }
+    .hero-content h1 { font-family:var(--font-d); font-size:clamp(36px,5vw,58px); font-weight:700; line-height:1.12; margin-bottom:24px; }
+    .hero-content h1 em { font-style:italic; color:var(--lilas); }
+    .hero-content .lead { font-size:clamp(16px,2vw,18px); color:var(--w7); margin-bottom:38px; line-height:1.65; font-weight:300; }
+    .hero-buttons { display:flex; flex-wrap:wrap; gap:14px; }
+    .btn-main { display:inline-flex; align-items:center; justify-content:center; background:var(--lilas); color:var(--w); font-weight:700; font-size:14px; padding:16px 34px; border-radius:100px; transition:all 0.25s; box-shadow:0 4px 20px rgba(168,99,255,0.35); border:none; cursor:pointer; }
+    .btn-main:hover { background:var(--roxo); transform:translateY(-2px); }
+    .btn-secondary { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--line2); background:rgba(255,255,255,0.02); color:var(--w7); font-weight:600; font-size:14px; padding:15px 30px; border-radius:100px; transition:all 0.25s; }
+    .btn-secondary:hover { border-color:var(--lilas); color:var(--w); }
+    .hero-media { display:flex; flex-direction:column; }
+    .media-card { background:linear-gradient(145deg,rgba(21,13,39,0.8),rgba(9,4,20,0.95)); border:1px solid var(--line2); border-radius:20px; padding:10px; box-shadow:0 30px 60px rgba(0,0,0,0.5); }
+    .media-card img { width:100%; height:300px; object-fit:cover; border-radius:13px; filter:brightness(0.9) contrast(1.05); }
+    .banner-lateral { margin-top:12px; background:var(--bg2); border:1px solid var(--line); border-radius:14px; padding:14px 16px; overflow:hidden; white-space:nowrap; }
+    .banner-lateral-track { display:inline-flex; gap:40px; animation:slide-lateral 20s linear infinite; }
+    .banner-lateral-track span { font-family:var(--font-logo); font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--lilas); flex-shrink:0; }
+    .banner-lateral-track span::after { content:' •'; margin-left:40px; color:var(--line2); }
+    @keyframes slide-lateral { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    @media(max-width:960px) { .hero-local{grid-template-columns:1fr;padding-top:60px;gap:40px;text-align:center} .eyebrow-badge{margin:0 auto 24px} .hero-buttons{justify-content:center} .hero-media{max-width:480px;margin:0 auto;width:100%} .media-card img{height:240px} }
+
+    /* SEÇÕES */
+    .section-header { text-align:center; max-width:700px; margin:0 auto 60px; padding:0 24px; }
+    .section-label { font-size:11px; font-weight:700; letter-spacing:0.3em; color:var(--lilas); text-transform:uppercase; margin-bottom:16px; display:block; }
+    .section-title { font-family:var(--font-d); font-size:clamp(28px,4vw,44px); font-weight:700; line-height:1.2; margin-bottom:18px; }
+    .section-title em { font-style:italic; color:var(--lilas); }
+    .section-subtitle { font-size:16px; color:var(--w7); line-height:1.6; }
+    .sec { padding:100px 24px; }
+    .sec-alt { padding:100px 24px; background:var(--bg2); }
+
+    /* PROCESSO */
+    .process-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:var(--line); border:1px solid var(--line); border-radius:20px; overflow:hidden; }
+    .process-card { background:var(--bg2); padding:44px 24px; display:flex; flex-direction:column; text-align:center; transition:background 0.3s; }
+    .process-card:hover { background:rgba(26,17,48,0.8); }
+    .process-num { font-family:var(--font-d); font-size:36px; font-style:italic; color:var(--lilas); opacity:0.3; margin-bottom:16px; font-weight:700; line-height:1; }
+    .process-card h3 { font-size:15px; font-weight:700; color:var(--w); margin-bottom:10px; }
+    .process-card p { font-size:13px; color:var(--w5); line-height:1.5; }
+    @media(max-width:768px) { .process-grid{grid-template-columns:repeat(2,1fr)} }
+
+    /* O QUE ESTÁ INCLUÍDO */
+    .check-grid { max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .check-item { background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:12px; padding:16px 20px; display:flex; align-items:center; gap:12px; font-size:14px; color:var(--w); font-weight:500; transition:all 0.2s; }
+    .check-item:hover { border-color:var(--line2); background:rgba(168,99,255,0.04); }
+    .check-icon { color:var(--lilas); font-size:16px; flex-shrink:0; }
+    @media(max-width:700px) { .check-grid{grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:480px) { .check-grid{grid-template-columns:1fr} }
+
+    /* BENEFÍCIOS */
+    .benef-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .benef-card { background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:18px; padding:32px 24px; transition:all 0.3s; }
+    .benef-card:hover { border-color:var(--line2); background:rgba(168,99,255,0.04); transform:translateY(-3px); }
+    .benef-icon { font-size:28px; margin-bottom:16px; }
+    .benef-card h3 { font-size:16px; font-weight:700; color:var(--w); margin-bottom:8px; }
+    .benef-card p { font-size:13px; color:var(--w5); line-height:1.6; }
+    @media(max-width:900px) { .benef-grid{grid-template-columns:repeat(2,1fr)} }
+    @media(max-width:500px) { .benef-grid{grid-template-columns:1fr} }
+
+    /* PLANOS */
+    .planos-grid { max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .plano-card { background:rgba(21,13,39,0.5); border:1px solid var(--line); border-radius:20px; padding:36px 28px; display:flex; flex-direction:column; transition:all 0.3s; }
+    .plano-card:hover { border-color:var(--lilas); background:rgba(168,99,255,0.04); transform:translateY(-3px); }
+    .plano-card.destaque { border-color:var(--lilas); background:rgba(168,99,255,0.05); }
+    .plano-card h3 { font-size:18px; font-weight:700; color:var(--w); margin-bottom:16px; }
+    .plano-price { font-family:var(--font-logo); font-size:36px; font-weight:900; color:var(--gold); margin-bottom:8px; }
+    .plano-price span { font-size:13px; font-weight:400; color:var(--w5); font-family:var(--font-b); display:block; margin-top:-4px; }
+    .plano-desc { font-size:14px; color:var(--w7); line-height:1.6; margin-bottom:28px; flex-grow:1; }
+    @media(max-width:850px) { .planos-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto} }
+
+    /* CTA FINAL */
+    .cta-final-sec { padding:100px 24px; position:relative; background:linear-gradient(180deg,var(--bg2),var(--bg)); }
+    .cta-final-sec::before { content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:50%; height:60%; background:radial-gradient(circle,rgba(168,99,255,0.08) 0%,transparent 70%); pointer-events:none; }
+    .cta-container { max-width:800px; margin:0 auto; background:linear-gradient(145deg,rgba(21,13,39,0.6),rgba(9,4,20,0.9)); border:1px solid var(--line2); border-radius:32px; padding:64px 48px; text-align:center; position:relative; z-index:2; }
+    .cta-container h2 { font-family:var(--font-d); font-size:clamp(28px,4vw,42px); font-weight:700; margin-bottom:20px; line-height:1.2; }
+    .cta-container h2 em { font-style:italic; color:var(--lilas); }
+    .cta-container p { font-size:17px; color:var(--w7); margin-bottom:36px; line-height:1.7; }
+    @media(max-width:600px) { .cta-container{padding:48px 24px} }
+
+    /* FOOTER */
+    .footer-master { background:var(--bg); border-top:1px solid var(--line); padding:80px 32px 28px; }
+    .footer-grid { max-width:1200px; margin:0 auto 56px; display:grid; grid-template-columns:2fr 1fr 1fr; gap:48px; }
+    .footer-logo-img { height:48px; border-radius:10px; margin-bottom:18px; }
+    .footer-col.branding strong { display:block; font-family:var(--font-logo); font-size:18px; font-weight:800; color:var(--w); }
+    .footer-col.branding .ft-sub { display:block; font-size:9px; font-weight:700; letter-spacing:0.18em; color:var(--lilas); text-transform:uppercase; margin-top:4px; margin-bottom:16px; }
+    .footer-col.branding p { font-size:14px; color:var(--w5); line-height:1.65; max-width:340px; }
+    .footer-col h4 { font-size:11px; font-weight:700; letter-spacing:0.15em; color:var(--w); text-transform:uppercase; margin-bottom:22px; }
+    .footer-col.links a { display:block; font-size:14px; font-weight:500; color:var(--w5); margin-bottom:14px; transition:color 0.2s; }
+    .footer-col.links a:hover { color:var(--lilas); }
+    .footer-col.contato ul { list-style:none; margin-bottom:20px; }
+    .footer-col.contato li { font-size:14px; color:var(--w5); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+    .footer-social { display:flex; gap:8px; flex-wrap:wrap; }
+    .footer-social a { font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:10px 18px; border:1px solid var(--line); border-radius:100px; color:var(--w7); transition:all 0.25s; }
+    .footer-social a:hover { border-color:var(--lilas); color:var(--w); background:rgba(168,99,255,0.06); }
+    .footer-bottom { max-width:1200px; margin:0 auto; padding-top:24px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+    .footer-bottom p { font-size:12px; color:var(--w3); letter-spacing:0.05em; }
+    .footer-revizi { max-width: 1200px; margin: 18px auto 0; padding-top: 18px; display: flex; justify-content: center; }
+    .revizi-capsula { display: inline-flex; align-items: center; gap: 20px; border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 10px 22px; background: rgba(255,255,255,0.015); }
+    .revizi-texto { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.01em; line-height: 1.4; text-align: right; }
+    .revizi-separador { width: 1px; height: 20px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
+    .revizi-logo { display: flex; align-items: center; }
+    .revizi-logo svg { display: block; height: 20px; width: auto; }
+    @media(max-width:900px) { .footer-grid{grid-template-columns:1fr;text-align:center} .footer-col.branding p{margin:0 auto} .footer-social{justify-content:center} .footer-col.contato li{justify-content:center} .footer-bottom{flex-direction:column;text-align:center} }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-master">
+    <div class="nav-master-inner">
+      <a href="../../index.html" class="nav-logo">
+        <img src="https://res.cloudinary.com/dslj0yjkm/image/upload/v1782608878/logo_colorida_q8ewmc.png" alt="Logo Presença Pro">
+        <div class="nav-logo-text">
+          <strong>Presença Pro</strong>
+          <span>Estruturação • Posicionamento • Presença Digital</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="../../index.html" class="nav-link">Home</a>
+        <a href="../../index.html#servicos" class="nav-link active">Serviços</a>
+        <a href="https://prosys-web.github.io/presenca-pro-afiliados/" class="nav-link" target="_blank" rel="noopener">Rede de Parceiros</a>
+        <a href="../../comunidade/index.html" class="nav-link">Comunidade</a>
+        <a href="../../portfolio/index.html" class="nav-link">Portfólio</a>
+        <a href="../../index.html#contato" class="nav-link">Contato</a>
+      </div>
+      <a href="../../diagnosticos/raio-x-essencial/" class="nav-cta">Solicitar Raio-X</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Abrir Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../../index.html">Home</a>
+    <a href="../../index.html#servicos">Serviços</a>
+    <a href="https://prosys-web.github.io/presenca-pro-afiliados/" target="_blank" rel="noopener">Rede de Parceiros</a>
+    <a href="../../comunidade/index.html">Comunidade</a>
+    <a href="../../portfolio/index.html">Portfólio</a>
+    <a href="../../index.html#contato">Contato</a>
+    <a href="../../diagnosticos/raio-x-essencial/" class="mobile-cta">Solicitar Raio-X</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <div class="hero-local">
+      <div class="hero-content reveal">
+        <div class="eyebrow-badge">Google Meu Negócio & Presença Local</div>
+        <h1>Sua empresa está pronta para ser encontrada no <em>Google?</em></h1>
+        <p class="lead">Milhares de pessoas pesquisam diariamente por empresas próximas. Um Perfil da Empresa bem estruturado aumenta sua visibilidade, transmite confiança e facilita o contato com novos clientes.</p>
+        <div class="hero-buttons">
+          <a href="../../diagnosticos/raio-x-essencial/" class="btn-main">Solicitar Raio-X Essencial</a>
+          <a href="#planos" class="btn-secondary">Conhecer os Planos →</a>
+        </div>
+      </div>
+      <div class="hero-media reveal">
+        <div class="media-card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Empresário verificando presença local no Google Maps">
+        </div>
+        <div class="banner-lateral">
+          <div class="banner-lateral-track">
+            <span>Estruturação • Posicionamento • Presença Digital</span>
+            <span>Estruturação • Posicionamento • Presença Digital</span>
+            <span>Estruturação • Posicionamento • Presença Digital</span>
+            <span>Estruturação • Posicionamento • Presença Digital</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMO FUNCIONA -->
+  <section class="sec" id="como-funciona">
+    <div class="section-header reveal">
+      <span class="section-label">O Processo</span>
+      <h2 class="section-title">Como <em>funciona?</em></h2>
+      <p class="section-subtitle">Um fluxo estruturado e planejado com foco em otimização, boas práticas e melhoria contínua da sua imagem local.</p>
+    </div>
+    <div class="process-grid reveal">
+      <div class="process-card">
+        <div class="process-num">01</div>
+        <h3>Diagnóstico</h3>
+        <p>Analisamos profundamente seu Perfil da Empresa atual e identificamos as oportunidades de melhoria.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">02</div>
+        <h3>Otimização</h3>
+        <p>Organizamos todas as informações de forma estratégica para maximizar sua visibilidade nos resultados locais.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">03</div>
+        <h3>Atualização</h3>
+        <p>Configuramos fotos, categorias, serviços, horários e publicações alinhados com boas práticas do Google.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">04</div>
+        <h3>Acompanhamento</h3>
+        <p>Monitoramos o desempenho e orientamos ações contínuas para manter e ampliar sua presença local.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE ESTÁ INCLUÍDO -->
+  <section class="sec-alt" id="incluido">
+    <div class="section-header reveal">
+      <span class="section-label">Cobertura Completa</span>
+      <h2 class="section-title">O que está <em>incluído?</em></h2>
+      <p class="section-subtitle">Toda a configuração essencial para estruturar de ponta a ponta o perfil oficial do seu negócio.</p>
+    </div>
+    <div class="check-grid reveal">
+      <div class="check-item"><span class="check-icon">✔</span> Categoria correta</div>
+      <div class="check-item"><span class="check-icon">✔</span> Descrição otimizada</div>
+      <div class="check-item"><span class="check-icon">✔</span> Fotos organizadas</div>
+      <div class="check-item"><span class="check-icon">✔</span> Serviços cadastrados</div>
+      <div class="check-item"><span class="check-icon">✔</span> Produtos</div>
+      <div class="check-item"><span class="check-icon">✔</span> Horários de funcionamento</div>
+      <div class="check-item"><span class="check-icon">✔</span> WhatsApp integrado</div>
+      <div class="check-item"><span class="check-icon">✔</span> Gestão de avaliações</div>
+      <div class="check-item"><span class="check-icon">✔</span> Publicações estratégicas</div>
+      <div class="check-item"><span class="check-icon">✔</span> Monitoramento contínuo</div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="sec" id="beneficios">
+    <div class="section-header reveal">
+      <span class="section-label">Resultados</span>
+      <h2 class="section-title">Quais os <em>benefícios?</em></h2>
+      <p class="section-subtitle">Otimizar continuamente seu Perfil é o caminho mais seguro para expandir suas conexões locais.</p>
+    </div>
+    <div class="benef-grid reveal">
+      <div class="benef-card"><div class="benef-icon">📈</div><h3>Mais visibilidade</h3><p>Apareça nos primeiros resultados quando clientes pesquisarem pelo seu serviço na sua cidade.</p></div>
+      <div class="benef-card"><div class="benef-icon">⭐</div><h3>Mais confiança</h3><p>Um perfil completo e bem avaliado transmite profissionalismo e aumenta a credibilidade do seu negócio.</p></div>
+      <div class="benef-card"><div class="benef-icon">💬</div><h3>Mais contatos</h3><p>Facilite o acesso pelo WhatsApp, telefone e rotas diretamente do perfil — sem fricção para o cliente.</p></div>
+      <div class="benef-card"><div class="benef-icon">📞</div><h3>Mais ligações</h3><p>Perfis otimizados recebem até 5x mais chamadas do que perfis incompletos ou sem atualização.</p></div>
+      <div class="benef-card"><div class="benef-icon">🚗</div><h3>Mais visitas</h3><p>Aumente o fluxo de clientes ao seu estabelecimento com rotas integradas e localização precisa.</p></div>
+      <div class="benef-card"><div class="benef-icon">🤝</div><h3>Mais oportunidades</h3><p>Clientes próximos e prontos para comprar encontram seu negócio exatamente quando precisam.</p></div>
+    </div>
+  </section>
+
+  <!-- PLANOS -->
+  <section class="sec-alt" id="planos">
+    <div class="section-header reveal">
+      <span class="section-label">Investimento</span>
+      <h2 class="section-title">Escolha o plano <em>ideal</em></h2>
+      <p class="section-subtitle">Escolha o nível de acompanhamento ideal para o seu negócio se consolidar regionalmente.</p>
+    </div>
+    <div class="planos-grid reveal">
+      <div class="plano-card">
+        <h3>Presença Local Essencial</h3>
+        <div class="plano-price">R$ 247<span>Setup Completo</span></div>
+        <p class="plano-desc">Setup estruturado do seu Perfil da Empresa, garantindo as configurações primordiais de visibilidade local.</p>
+        <a href="https://wa.me/5585994249656?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Presen%C3%A7a%20Local%20Essencial." class="btn-main" target="_blank" rel="noopener">Quero esse plano</a>
+      </div>
+      <div class="plano-card destaque">
+        <h3>Gestão Mensal</h3>
+        <div class="plano-price">R$ 97<span>/mês</span></div>
+        <p class="plano-desc">Atualizações contínuas de dados, postagens recorrentes, acompanhamento e suporte para melhorias mensais.</p>
+        <a href="https://wa.me/5585994249656?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Gest%C3%A3o%20Mensal%20de%20Presen%C3%A7a%20Local." class="btn-main" target="_blank" rel="noopener">Quero esse plano</a>
+      </div>
+      <div class="plano-card">
+        <h3>Gestão Avançada</h3>
+        <div class="plano-price">R$ 177<span>/mês</span></div>
+        <p class="plano-desc">Gestão completa e delegada com captação de reviews, postagens semanais otimizadas e relatórios mensais.</p>
+        <a href="https://wa.me/5585994249656?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Gest%C3%A3o%20Avan%C3%A7ada%20de%20Presen%C3%A7a%20Local." class="btn-main" target="_blank" rel="noopener">Quero esse plano</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final-sec reveal">
+    <div class="cta-container">
+      <h2>Seja encontrado por quem já está <em>procurando você</em></h2>
+      <p>Não deixe seu concorrente aparecer primeiro quando um cliente pesquisar pelo seu serviço. Estruture sua presença local agora e comece a receber mais contatos ainda esta semana.</p>
+      <a href="../../diagnosticos/raio-x-essencial/" class="btn-main">Solicitar Raio-X Essencial — Gratuito</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-master">
+    <div class="footer-grid">
+      <div class="footer-col branding">
+        <img src="https://res.cloudinary.com/dslj0yjkm/image/upload/v1782608878/logo_colorida_q8ewmc.png" alt="Presença Pro" class="footer-logo-img">
+        <strong>Presença Pro</strong>
+        <span class="ft-sub">Estruturação • Posicionamento • Presença Digital</span>
+        <p>Ajudamos pequenos negócios a fortalecer sua estruturação, posicionamento e presença digital por meio de soluções práticas, consultoria e tecnologia.</p>
+      </div>
+      <div class="footer-col links">
+        <h4>Navegação</h4>
+        <a href="../../index.html">Home</a>
+        <a href="../../index.html#servicos">Serviços</a>
+        <a href="../../comunidade/index.html">Comunidade</a>
+        <a href="https://prosys-web.github.io/presenca-pro-afiliados/" target="_blank" rel="noopener">Rede de Parceiros</a>
+        <a href="../../portfolio/index.html">Portfólio</a>
+        <a href="../../index.html#contato">Contato</a>
+      </div>
+      <div class="footer-col contato">
+        <h4>Contato</h4>
+        <ul>
+          <li>📍 Fortaleza – CE</li>
+          <li>📧 presenca.proagencia@gmail.com</li>
+          <li>📱 (85) 99424-9656</li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://wa.me/5585994249656" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://instagram.com/presencapro.agencia" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Presença Pro. Todos os direitos reservados.</p>
+      <p>Estruturação • Posicionamento • Presença Digital</p>
+    </div>
+    <div class="footer-revizi">
+      <div class="revizi-capsula">
+        <span class="revizi-texto">Uma unidade de<br>negócios do Grupo</span>
+        <span class="revizi-separador"></span>
+        <span class="revizi-logo"><svg viewBox="0 0 441.24 129.94" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(24,21) scale(0.34)">
+              <path d="M 178.0 10.5 H 8.0 L 93.0 216.0 C 101.96299999999997 189.11700000000002 108.34900000000005 172.76299999999998 127.5 136.5 C 135.99300000000005 121.66399999999999 150.0 105.5 150.0 105.5 C 150.0 105.5 166.17399999999998 85.749 178.0 78.0 V 10.5 Z" fill="#EDE9E0"/>
+              <path d="M 283.047 9.0 H 494.0 C 365.269 77.85300000000001 218.798 145.66199999999998 103.81299999999999 250.0 C 95.45299999999997 193.14499999999998 153.481 114.34100000000001 190.409 79.082 L 218.10000000000002 55.38499999999999 L 249.31500000000005 31.687999999999988 L 283.047 9.0 Z" fill="#B48A3C"/>
+            </g>
+            <text x="211.24" y="86.97" font-family="IBM Plex Sans, Arial, sans-serif" font-size="46" font-weight="700" letter-spacing="1" fill="#EDE9E0">REVIZI</text>
+          </svg></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('navHamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const spans = hamburger.querySelectorAll('span');
+      const isOpen = mobileMenu.classList.contains('open');
+      spans[0].style.transform = isOpen ? 'rotate(45deg) translate(5px,5px)' : 'none';
+      spans[1].style.opacity  = isOpen ? '0' : '1';
+      spans[2].style.transform = isOpen ? 'rotate(-45deg) translate(5px,-5px)' : 'none';
+    });
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.querySelectorAll('span').forEach(s => { s.style.transform='none'; s.style.opacity='1'; });
+      });
+    });
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
